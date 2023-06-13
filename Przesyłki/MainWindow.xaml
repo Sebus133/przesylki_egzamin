@@ -1,0 +1,50 @@
+﻿<Window x:Class="Przesyłki.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Przesyłki"
+        mc:Ignorable="d"
+        Title="Nadaj przesyłke (numer zdającego)" Height="450" Width="auto">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition ></RowDefinition>
+            <RowDefinition ></RowDefinition>
+            <RowDefinition ></RowDefinition>
+            <RowDefinition ></RowDefinition>
+            
+
+        </Grid.RowDefinitions>
+
+
+        <GroupBox >
+            <StackPanel>
+                <RadioButton x:Name="pocztowka" Content="Pocztówka"  GroupName="typPrzesyłki" IsChecked="True"></RadioButton>
+                <RadioButton x:Name="list" Content="List"  GroupName="typPrzesyłki" ></RadioButton>
+                <RadioButton x:Name="paczka" Content="Paczka"  GroupName="typPrzesyłki" ></RadioButton>
+            </StackPanel>
+        </GroupBox>
+
+        <GroupBox Grid.Row="1" Grid.RowSpan="2" >
+            <StackPanel>
+                <Label>Ulica z numerem</Label>
+                <TextBox></TextBox>
+                <Label>Kod Pocztowy</Label>
+                <TextBox x:Name="kodPocztowy"></TextBox>
+                <Label>Miasto</Label>
+                <TextBox></TextBox>
+            </StackPanel>
+        </GroupBox>
+        <Button Click="Sprawdz_cene" Grid.Column="1" Grid.Row="1" Width="150" Height="50"  >Sprawdź cenę</Button>
+        <Button Click="Zatwierdz" Grid.Column="1" Grid.Row="3" Width="150" Height="50" >Zatwierdź</Button>
+        <Image  x:Name="zdjecie" Grid.Column="1" Source="resource/Pocztówka.png"  ></Image>
+
+        <Label x:Name="cena" Grid.Row="3" >cena:</Label>
+    </Grid>
+</Window>
